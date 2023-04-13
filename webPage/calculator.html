@@ -5,17 +5,19 @@
 </head>
 <body>
     <p>電卓</p>
-    <input type = "text" id = "num1"></input>
+    <input type = "text" id = "num"></input>
     <input type="button" value="=" onclick="clickBtn()">
     <span id="ans"></<span>
 </body>
 </html>
 
 <script>
+  const num = document.getElementById("num");
+  const ans = document.getElementById("ans");
+
   function clickBtn() {
-    let num1 = document.getElementById("num1");
     console.log(num1.value);
-    document.getElementById("ans").textContent = eval(num1.value);
-    console.log(document.getElementById("ans"))
+    ans.textContent = eval(num1.value);
+    console.log(ans)
   }
 </script>

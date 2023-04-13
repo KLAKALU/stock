@@ -6,3 +6,4 @@ https://qiita.com/ryukokuhorizon/private/8a4209a830d6e21645b9
 
 ## calculator.html
 サークルの体験会の為に作成したごく単純な計算ができるWebページ。
+2022年度の体験会に使用。

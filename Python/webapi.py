@@ -18,22 +18,16 @@ def getbookdetails(isbn):
     value = '&isbnjan=' + isbn
     uri = baserequest + appid + value
     r = requests.get(uri)
-    return r
+    json_load = r.json()
+    info = {}
+    info["title"] = json_load['Items'][0]['Item']['title']
+    info['writer'] = json_load['Items'][0]['Item']['author']
+    return info
 
-print(time.perf_counter() - start)
+# print(json.dumps(json_load, indent=2, ensure_ascii=False))
 
-r = getbookdetails(isbn)
+info = getbookdetails(isbn)
 
-json_load = r.json()
+print(info['title'])
 
-print(time.perf_counter() - start)
-
-print(json.dumps(json_load, indent=2, ensure_ascii=False))
-
-print(time.perf_counter() - start)
-
-print(json_load['Items'][0]['Item']['title'])
-
-print(time.perf_counter() - start)
-
-print(time.perf_counter())
+print(info['writer'])
